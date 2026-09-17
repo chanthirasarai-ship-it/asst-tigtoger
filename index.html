@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f8f7ff" />
+  <title>Asst.tigtoger — Focus list</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#" aria-label="Asst.tigtoger home"><span class="brand-mark">✦</span><span>Asst<span class="brand-dot">.</span>tigtoger</span></a>
+      <nav aria-label="Main navigation">
+        <button class="nav-item active" data-filter="all"><span>◉</span> All tasks <b id="all-count">0</b></button>
+        <button class="nav-item" data-filter="today"><span>☀</span> Today <b id="today-count">0</b></button>
+        <button class="nav-item" data-filter="completed"><span>✓</span> Completed <b id="completed-count">0</b></button>
+      </nav>
+      <div class="sidebar-bottom"><div class="tip-card"><span class="tip-icon">✧</span><strong>Small steps,<br>big progress.</strong><p>Keep your content ideas moving.</p></div><p class="copyright">Asst.tigtoger · 2024</p></div>
+    </aside>
+
+    <section class="content">
+      <header class="topbar"><div><p class="eyebrow">YOUR CREATIVE SPACE</p><h1>Good morning, creator <span>✦</span></h1><p class="subtitle">What will you accomplish today?</p></div><button class="avatar" aria-label="Profile">C</button></header>
+      <section class="progress-card"><div><span class="progress-label">TODAY'S PROGRESS</span><strong id="progress-text">0 of 0 completed</strong></div><div class="progress-track"><div id="progress-bar"></div></div><span id="progress-percent" class="progress-percent">0%</span></section>
+      <section class="toolbar"><div class="tabs"><button class="tab active" data-filter="all">All</button><button class="tab" data-filter="today">Today</button><button class="tab" data-filter="completed">Completed</button></div><button class="clear-btn" id="clear-completed">Clear completed</button></section>
+      <form class="add-form" id="task-form"><input id="task-input" type="text" maxlength="100" placeholder="Add a new task..." autocomplete="off" required><select id="priority-input" aria-label="Priority"><option value="medium">Medium</option><option value="high">High</option><option value="low">Low</option></select><button type="submit" class="add-btn">Add task <span>＋</span></button></form>
+      <div class="task-list" id="task-list" aria-live="polite"></div>
+      <div class="empty-state" id="empty-state" hidden><div class="empty-icon">✦</div><h2>Nothing here yet</h2><p>Add your first task and make today count.</p></div>
+      <footer class="footer"><span>Saved locally on this device</span><button id="clear-all">Delete all tasks</button></footer>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
